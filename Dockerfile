@@ -13,5 +13,6 @@ RUN rpm --install $CB_RELEASE_URL/$CB_VERSION/$CB_PACKAGE
 USER couchbase
 COPY ./docker-entrypoint.sh /
 VOLUME ["/opt/couchbase/var"]
+EXPOSE 8091 8092 8093 8094 11207 11210 11211 18091 18092 18093
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
