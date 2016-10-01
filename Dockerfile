@@ -11,7 +11,7 @@ RUN yum install -y  hostname  initscripts  openssl  pkgconfig  sudo  tar  wget  
 RUN useradd -m couchbase
 RUN rpm --install $CB_RELEASE_URL/$CB_VERSION/$CB_PACKAGE 
 USER couchbase
-COPY docker-entrypoint.sh /
+COPY ./docker-entrypoint.sh /
 VOLUME ["/opt/couchbase/var"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
